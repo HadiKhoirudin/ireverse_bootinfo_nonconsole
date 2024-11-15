@@ -34,7 +34,7 @@ namespace iReverse_BootInfo.boot
                     int mode = header.mode;
                     int filesize = header.filesize;
                     totalsize += filesize;
-                    if (name != "invalid" && (name.Contains("build.prop") || name.Contains("prop.default") || name.Contains("default.prop") || name.Contains("prop")))
+                    if (name != "invalid" && (name.Contains("build.prop") || name.Contains("prop.default") || name.Contains("default.prop")))
                     {
                         byte[] buffer = new byte[filesize];
                         cpio.Read(buffer, 0, buffer.Length);

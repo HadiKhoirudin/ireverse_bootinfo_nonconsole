@@ -20,17 +20,23 @@ namespace iReverse_BootInfo
         public void showlog()
         {
             RichLogs("Boot Info Version : ", Color.White, true, false);
-            RichLogs("1.1 RC 32-bit.", Color.Cyan, true, true);
+            RichLogs("1.1 RC - RevFix 32-bit.", Color.Cyan, true, true);
 
             RichLogs("Supported Chipset : ", Color.White, true, false);
             RichLogs("MediaTek, Qualcomm, Unisoc, & More.\n", Color.Cyan, true, true);
 
-            RichLogs("Features          :...", Color.White, true, true);
+            RichLogs("Features          : ...", Color.White, true, true);
             RichLogs("AVB Version 2.0   : ", Color.White, true, false);
             RichLogs("Supported!", Color.Lime, true, true);
 
             RichLogs("LZ4 Decompression : ", Color.White, true, false);
-            RichLogs("Supported!", Color.Lime, true, true);
+            RichLogs("Supported!\n", Color.Lime, true, true);
+
+            RichLogs("Instructions\n", Color.White, true, true);
+            RichLogs("For Non A/B Device ", Color.White, true, true);
+            RichLogs(" - Use recovery.img.\n", Color.Cyan, true, true);
+            RichLogs("For A/B Device ", Color.White, true, true);
+            RichLogs(" - Use boot_a.img or boot_b.img or recovery_a.img or recovery_b.img.", Color.Cyan, true, true);
         }
 
         public static void RichLogs(string msg, Color colour, bool isBold, bool NextLine = false)

@@ -125,8 +125,9 @@ namespace iReverse_BootInfo.boot
                     var listsprop = new List<string>();
                     if (ramdisk[0] != 0x1F && ramdisk[1] != 0x8B && ramdisk[2] != 0x8)
                     {
-                        byte[] dst = new byte[ramdisk.Length * 8];
+                        byte[] dst = new byte[50000000];
                         var block = Lz4Decompressor.lz4_hadikit_decompress(src: ramdisk, dst: ref dst);
+
                         if (block > 0)
                         {
                             var cpio = new cpio_stream(dst);
@@ -199,7 +200,7 @@ namespace iReverse_BootInfo.boot
         {
             foreach (string infos in allinfolist)
             {
-                if (infos.StartsWith(search))
+                if (infos.Contains("=") && infos.StartsWith(search))
                 {
                     return infos.Split('=')[1];
                 }
