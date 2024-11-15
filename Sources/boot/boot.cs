@@ -11,6 +11,7 @@ namespace iReverse_BootInfo.boot
 {
     public class boot
     {
+
         #region structure
 
         [StructLayout(LayoutKind.Sequential, Pack = 1)]
@@ -37,33 +38,31 @@ namespace iReverse_BootInfo.boot
         }
         #endregion
 
-
         public static Dictionary<string, List<string>> build = new Dictionary<string, List<string>>
         {
-            { "Brand ", new List<string> { "ro.product.brand", "ro.product.product.brand", "ro.product.odm.brand", "ro.product.vendor.brand", "ro.product.system_ext.brand", "ro.dolby.brand" } },
-            { "OEM ", new List<string> { "ro.product.manufacturer", "ro.product.vendor.manufacturer", "ro.product.odm.manufacturer", "ro.product.product.manufacturer", "ro.product.system_ext.manufacturer", "ro.product.system.manufacturer", "ro.dolby.manufacturer" } },
-            { "Model ", new List<string> { "ro.product.model", "ro.product.product.model", "ro.product.system_ext.model", "ro.product.system.model", "ro.product.vendor.model", "ro.product.odm.model", "ro.vivo.product.release.model" } },
-            { "Name ", new List<string> { "ro.product.product.name", "ro.product.system_ext.name", "ro.product.system.name", "ro.product.name", "ro.vivo.product.release.name" } },
-            { "Product ", new List<string> { "ro.product.device", "ro.product.product.device", "ro.product.system_ext.device", "ro.product.system.device", "ro.product.mod_device", "ro.miui.cust_device", "ro.product.vendor.device", "ro.product.board" } },
+            { "Brand ", new List<string> { "ro.product.brand", "ro.product.product.brand", "ro.product.odm.brand", "ro.product.vendor.brand", "ro.product.system_ext.brand", "ro.dolby.brand", "ro.product.bootimage.brand" } },
+            { "OEM ", new List<string> { "ro.product.manufacturer", "ro.product.vendor.manufacturer", "ro.product.odm.manufacturer", "ro.product.product.manufacturer", "ro.product.system_ext.manufacturer", "ro.product.system.manufacturer", "ro.dolby.manufacturer", "ro.product.bootimage.manufacturer" } },
+            { "Model ", new List<string> { "ro.product.model", "ro.product.product.model", "ro.product.system_ext.model", "ro.product.system.model", "ro.product.vendor.model", "ro.product.odm.model", "ro.vivo.product.release.model", "ro.product.bootimage.model" } },
+            { "Name ", new List<string> { "ro.product.product.name", "ro.product.system_ext.name", "ro.product.system.name", "ro.product.name", "ro.vivo.product.release.name", "ro.product.bootimage.tran.device.name.default", "ro.product.bootimage.name" } },
+            { "Product ", new List<string> { "ro.product.device", "ro.product.product.device", "ro.product.system_ext.device", "ro.product.system.device", "ro.product.mod_device", "ro.miui.cust_device", "ro.product.vendor.device", "ro.product.board", "ro.product.bootimage.device" } },
             { "Market name ", new List<string> { "ro.oppo.market.name", "ro.product.product.marketname", "ro.product.system_ext.marketname", "ro.product.system.marketname" } },
-            { "SDK ver ", new List<string> { "ro.build.version.sdk", "ro.vendor.build.version.sdk", "ro.product.build.version.sdk" } },
+            { "SDK ver ", new List<string> { "ro.build.version.sdk", "ro.vendor.build.version.sdk", "ro.product.build.version.sdk", "ro.bootimage.build.version.sdk" } },
             { "Code name ", new List<string> { "ro.build.version.codename", "ro.system.build.version.release_or_codename" } },
             { "Incremental ", new List<string> { "ro.system.build.version.incremental", "ro.build.version.incremental", "ro.vendor.build.version.incremental" } },
             { "OTA ver ", new List<string> { "ro.build.version.ota" } },
-            { "OTA partitions ", new List<string> { "ro.product.ab_ota_partitions" } },
-            { "Build ID ", new List<string> { "ro.product.build.id", "ro.build.id" } },
+            { "Build ID ", new List<string> { "ro.product.build.id", "ro.build.id", "ro.bootimage.build.id" } },
             { "OS ver ", new List<string> { "ro.vivo.os.build.display.id" } },
-            { "Android ver ", new List<string> { "ro.odm.build.version.release", "ro.product.build.version.release", "ro.build.version.release", "ro.vivo.os.version" } },
+            { "Android ver ", new List<string> { "ro.odm.build.version.release", "ro.product.build.version.release", "ro.build.version.release", "ro.vivo.os.version", "ro.bootimage.build.version.release", "ro.bootimage.build.version.release_or_codename" } },
             { "MIUI ver ", new List<string> { "ro.miui.ui.version.code", "ro.miui.ui.version.name" } },
-            { "Security patch ", new List<string> { "ro.build.version.security_patch", "ro.vendor.build.security_patch" } },
+            { "Security patch ", new List<string> { "ro.build.version.security_patch", "ro.vendor.build.security_patch", "ro.bootimage.build.security_patch" } },
             { "Region ", new List<string> { "ro.miui.build.region", "persist.sys.oppo.region" } },
             { "Timezone ", new List<string> { "persist.sys.timezone" } },
             { "Platform ", new List<string> { "ro.vivo.product.platform", "ro.vendor.mediatek.platform", "ro.board.platform", "ro.mediatek.platform", "ro.vivo.product.platform" } },
             { "Kernel ID ", new List<string> { "ro.build.kernel.id" } },
             { "CPU ABI ", new List<string> { "ro.vendor.product.cpu.abilist", "ro.product.cpu.abi" } },
             { "SW ver ", new List<string> { "ro.vendor.build.software.version", "ro.build.software.version" } },
-            { "Build Date ", new List<string> { "ro.product.build.date", "ro.system.build.date", "ro.build.date", "ro.bootimage.build.date" } },
-            { "Fingerprint ", new List<string> { "ro.build.description" } }
+            { "Build Date ", new List<string> { "ro.product.build.date", "ro.system.build.date", "ro.build.date", "ro.bootimage.build.date", "ro.bootimage.build.date" } },
+            { "Fingerprint ", new List<string> { "ro.build.description", "ro.bootimage.build.fingerprint" } }
         };
 
         public static void extract(byte[] boot)
@@ -75,85 +74,110 @@ namespace iReverse_BootInfo.boot
                 int start = find_binary(boot, StringToByteArray("41 4E 44 52 4F 49 44 21 60"), 0);
                 boot = boot.Skip(start).Take(boot.Length - start).ToArray();
             }
-
-            MemoryStream bootstream = new MemoryStream(boot);
-            using (bootstream)
+            try
             {
-                byte[] buffer = new byte[8];
-                bootstream.Read(buffer, 0, 8);
-                string boot_magic = Encoding.ASCII.GetString(buffer);
-                if (boot_magic != "ANDROID!")
+                MemoryStream bootstream = new MemoryStream(boot);
+                using (bootstream)
                 {
-                    Main.RichLogs("Cant read device information.", Color.Red, true, true);
-                    return;
-                }
-                BinaryReader reader = new BinaryReader(new MemoryStream(boot));
-                bootheader header = unpack_reader<bootheader>(reader);
-                uint baseAddr = (uint)(header.kernel_addr - 0x8000);
-                bootstream.Seek(header.page_size - Marshal.SizeOf(typeof(bootheader)), SeekOrigin.Current);
-                long size = 0;
-                while (true)
-                {
-                    byte[] pageBuffer = reader.ReadBytes(header.page_size);
-                    bootstream.Read(pageBuffer, 0, pageBuffer.Length);
-                    if (pageBuffer.SequenceEqual(new byte[header.page_size]))
-                    {
-                        continue;
-                    }
-                    reader.BaseStream.Seek(-header.page_size, SeekOrigin.Current);
-                    size = bootstream.Position;
-                    break;
-                }
-                long num_header_pages = 1;
-                var num_kernel_pages = get_number_of_pages(header.kernel_size, header.page_size);
-                var ramdisk_offset = header.page_size * (num_header_pages + num_kernel_pages);
-                bootstream.Seek(ramdisk_offset, SeekOrigin.Begin);
-                byte[] ramdisk = new byte[header.ramdisk_size];
-                bootstream.Read(ramdisk, 0, header.ramdisk_size);
-                var tsmigic = ramdisk.Take(3).ToArray();
-                if (ramdisk[0] != 0x1F && ramdisk[1] != 0x8B && ramdisk[2] != 0x8)
-                {
-                    Main.RichLogs("Cant read device information.", Color.Red, true, true);
-                    return;
-                }
-                var listsprop = new List<string>();
-                using (GZipStream inflater = new GZipStream(new MemoryStream(ramdisk), CompressionMode.Decompress))
-                {
-                    int decompressed_bytes_read = 0;
-                    var decompressed_buffer = new byte[ramdisk.Length];
-                    using (var stream = new MemoryStream())
-                    {
-                        while (true)
-                        {
-                            decompressed_bytes_read = inflater.Read(decompressed_buffer, 0, decompressed_buffer.Length);
-                            if (decompressed_bytes_read <= 0)
-                            {
-                                break;
-                            }
-                            stream.Write(decompressed_buffer, 0, decompressed_bytes_read);
-                        }
-                        var cpio = new cpio_stream(stream.ToArray());
-                        listsprop = cpio.parsecpio();
-                    }
-                }
-                if (listsprop.Count > 0)
-                {
-                    foreach (var kvp in build)
-                    {
-                        string mainCmd = kvp.Key;
-                        foreach (string command in kvp.Value)
-                        {
-                            var info = infolist(listsprop, command);
-                            if (!string.IsNullOrEmpty(info))
-                            {
-                                Main.RichLogs($"  {mainCmd}: ", Color.White, false, false);
-                                Main.RichLogs(info, Color.MediumSlateBlue, true, true);
+                    byte[] buffer = new byte[8];
+                    bootstream.Read(buffer, 0, 8);
+                    string boot_magic = Encoding.ASCII.GetString(buffer);
 
-                                break;
+                    if (boot_magic != "ANDROID!")
+                    {
+                        Main.RichLogs("Cant read device information.", Color.Red, true, true);
+                        return;
+                    }
+
+                    BinaryReader reader = new BinaryReader(new MemoryStream(boot));
+                    bootheader header = unpack_reader<bootheader>(reader);
+                    if (header.page_size <= 0)
+                    {
+                        header.page_size = 4096;
+                        header.ramdisk_size = (int)header.kernel_addr;
+                    }
+
+                    uint baseAddr = (uint)(header.kernel_addr - 0x8000);
+
+                    bootstream.Seek(header.page_size - Marshal.SizeOf(typeof(bootheader)), SeekOrigin.Current);
+                    long size = 0;
+                    while (true)
+                    {
+                        byte[] pageBuffer = reader.ReadBytes(header.page_size);
+                        bootstream.Read(pageBuffer, 0, pageBuffer.Length);
+                        if (pageBuffer.SequenceEqual(new byte[header.page_size]))
+                        {
+                            continue;
+                        }
+                        reader.BaseStream.Seek(-header.page_size, SeekOrigin.Current);
+                        size = bootstream.Position;
+                        break;
+                    }
+
+                    long num_header_pages = 1;
+                    var num_kernel_pages = get_number_of_pages(header.kernel_size, header.page_size);
+                    var ramdisk_offset = header.page_size * (num_header_pages + num_kernel_pages);
+
+                    bootstream.Seek(ramdisk_offset, SeekOrigin.Begin);
+                    byte[] ramdisk = new byte[header.ramdisk_size];
+                    bootstream.Read(ramdisk, 0, header.ramdisk_size);
+                    var tsmigic = ramdisk.Take(3).ToArray();
+                    var listsprop = new List<string>();
+                    if (ramdisk[0] != 0x1F && ramdisk[1] != 0x8B && ramdisk[2] != 0x8)
+                    {
+                        byte[] dst = new byte[ramdisk.Length * 8];
+                        var block = Lz4Decompressor.lz4_hadikit_decompress(src: ramdisk, dst: ref dst);
+                        if (block > 0)
+                        {
+                            var cpio = new cpio_stream(dst);
+                            listsprop = cpio.parsecpio();
+                        }
+                    }
+                    else
+                    {
+                        using (GZipStream inflater = new GZipStream(new MemoryStream(ramdisk), CompressionMode.Decompress))
+                        {
+                            int decompressed_bytes_read = 0;
+                            var decompressed_buffer = new byte[ramdisk.Length];
+                            using (var stream = new MemoryStream())
+                            {
+                                while (true)
+                                {
+                                    decompressed_bytes_read = inflater.Read(decompressed_buffer, 0, decompressed_buffer.Length);
+                                    if (decompressed_bytes_read <= 0)
+                                    {
+                                        break;
+                                    }
+                                    stream.Write(decompressed_buffer, 0, decompressed_bytes_read);
+                                }
+                                var cpio = new cpio_stream(stream.ToArray());
+                                listsprop = cpio.parsecpio();
+                            }
+                        }
+                    }
+                    if (listsprop.Count > 0)
+                    {
+                        foreach (var kvp in build)
+                        {
+                            string mainCmd = kvp.Key;
+                            foreach (string command in kvp.Value)
+                            {
+                                var info = infolist(listsprop, command);
+                                if (!string.IsNullOrEmpty(info))
+                                {
+                                    Main.RichLogs($"  {mainCmd}: ", Color.White, false, false);
+                                    Main.RichLogs(info, Color.MediumSlateBlue, true, true);
+                                    break;
+                                }
                             }
                         }
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                Main.RichLogs("Recovery / Boot IMG file not supported!", Color.Orange, true, true);
+                Console.WriteLine(ex.Message);
             }
         }
 
@@ -196,19 +220,17 @@ namespace iReverse_BootInfo.boot
                 if (bytef.Length <= 0)
                     return -1;
 
-                int end = array.Length - bytef.Length; // past here no match is possible
-                byte firstByte = bytef[0]; // cached to tell compiler there's no aliasing
+                int end = array.Length - bytef.Length;
+                byte firstByte = bytef[0];
 
                 while (start <= end)
                 {
-                    // scan for first byte only. compiler-friendly.
                     if (array[start] == firstByte)
                     {
-                        // scan for rest of sequence
                         for (int offset = 1; ; ++offset)
                         {
                             if (offset == bytef.Length)
-                            { // full sequence matched?
+                            {
                                 return start;
                             }
                             else if (array[start + offset] != bytef[offset])
@@ -219,8 +241,6 @@ namespace iReverse_BootInfo.boot
                     }
                     ++start;
                 }
-
-                // end of array reached without match
                 return -1;
             }
             catch (Exception ex)

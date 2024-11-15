@@ -1,0 +1,12 @@
+C:\Users\Asus\source\repos\iReverse_BootInfo\Sources\bin\x86\Debug\iReverse_BootInfo.exe.config
+C:\Users\Asus\source\repos\iReverse_BootInfo\Sources\bin\x86\Debug\iReverse_BootInfo.exe
+C:\Users\Asus\source\repos\iReverse_BootInfo\Sources\bin\x86\Debug\iReverse_BootInfo.pdb
+C:\Users\Asus\source\repos\iReverse_BootInfo\Sources\bin\x86\Debug\LZ4.ManagedWrapper.dll
+C:\Users\Asus\source\repos\iReverse_BootInfo\Sources\bin\x86\Debug\LZ4.Sharp.dll
+C:\Users\Asus\source\repos\iReverse_BootInfo\Sources\obj\x86\Debug\iReverse_BootInfo.Main.resources
+C:\Users\Asus\source\repos\iReverse_BootInfo\Sources\obj\x86\Debug\iReverse_BootInfo.Properties.Resources.resources
+C:\Users\Asus\source\repos\iReverse_BootInfo\Sources\obj\x86\Debug\iReverse_BootInfo.csproj.GenerateResource.cache
+C:\Users\Asus\source\repos\iReverse_BootInfo\Sources\obj\x86\Debug\iReverse_BootInfo.csproj.CoreCompileInputs.cache
+C:\Users\Asus\source\repos\iReverse_BootInfo\Sources\obj\x86\Debug\iReverse_BootInfo.csproj.CopyComplete
+C:\Users\Asus\source\repos\iReverse_BootInfo\Sources\obj\x86\Debug\iReverse_BootInfo.exe
+C:\Users\Asus\source\repos\iReverse_BootInfo\Sources\obj\x86\Debug\iReverse_BootInfo.pdb

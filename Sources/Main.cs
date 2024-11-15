@@ -16,17 +16,23 @@ namespace iReverse_BootInfo
             SharedUI = this;
             showlog();
         }
+
         public void showlog()
         {
             RichLogs("Boot Info Version : ", Color.White, true, false);
-            RichLogs("1.0 32-bit.", Color.Cyan, true, true);
+            RichLogs("1.1 RC 32-bit.", Color.Cyan, true, true);
 
             RichLogs("Supported Chipset : ", Color.White, true, false);
-            RichLogs("MediaTek, Qualcomm, & Unisoc.", Color.Cyan, true, true);
-            
+            RichLogs("MediaTek, Qualcomm, Unisoc, & More.\n", Color.Cyan, true, true);
+
+            RichLogs("Features          :...", Color.White, true, true);
             RichLogs("AVB Version 2.0   : ", Color.White, true, false);
-            RichLogs("Currently Not Supported!", Color.DimGray, true, true);
+            RichLogs("Supported!", Color.Lime, true, true);
+
+            RichLogs("LZ4 Decompression : ", Color.White, true, false);
+            RichLogs("Supported!", Color.Lime, true, true);
         }
+
         public static void RichLogs(string msg, Color colour, bool isBold, bool NextLine = false)
         {
             if (SharedUI.richTextBox1.InvokeRequired)
@@ -75,6 +81,7 @@ namespace iReverse_BootInfo
                 }
             }
         }
+
         private void label_close_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -101,6 +108,12 @@ namespace iReverse_BootInfo
 
             richTextBox1.Clear();
             await Task.Run(() => boot.boot.extract(File.ReadAllBytes(textBox_boot.Text)));
+        }
+
+        private void richTextBox1_DoubleClick(object sender, EventArgs e)
+        {
+            richTextBox1.Clear();
+            showlog();
         }
     }
 }

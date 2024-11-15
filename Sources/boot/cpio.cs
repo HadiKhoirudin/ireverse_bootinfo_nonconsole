@@ -8,6 +8,7 @@ namespace iReverse_BootInfo.boot
     public class cpio_stream
     {
         private MemoryStream cpioStream;
+
         public cpio_stream(byte[] cpio)
         {
             cpioStream = new MemoryStream(cpio);
@@ -17,6 +18,7 @@ namespace iReverse_BootInfo.boot
         private const int S_IFDIR = 0x4000;
         private const int S_IFREG = 0x8000;
         private const int S_IFMT = 0xF000;
+
         public List<string> parsecpio()
         {
             MemoryStream cpio = cpioStream;
@@ -32,9 +34,8 @@ namespace iReverse_BootInfo.boot
                     int mode = header.mode;
                     int filesize = header.filesize;
                     totalsize += filesize;
-                    if (name != "invalid" && (name.Contains("build.prop") || name.Contains("prop.default") || name.Contains("default.prop")))
+                    if (name != "invalid" && (name.Contains("build.prop") || name.Contains("prop.default") || name.Contains("default.prop") || name.Contains("prop")))
                     {
-                        Console.WriteLine($"{name}  {filesize}");
                         byte[] buffer = new byte[filesize];
                         cpio.Read(buffer, 0, buffer.Length);
                         listsprop.AddRange(Encoding.UTF8.GetString(buffer).Split("\n"[0]));
@@ -69,6 +70,7 @@ namespace iReverse_BootInfo.boot
             }
             return listsprop;
         }
+
         public (string name, int mode, int filesize) read_cpio_header(Stream cpio)
         {
             Func<int, int> padding = (x) => (-x + 1 - 1) & 3;
@@ -97,6 +99,5 @@ namespace iReverse_BootInfo.boot
             cpio.Seek(padding(namesize + 110), SeekOrigin.Current);
             return (name, mode, filesize);
         }
-
     }
 }

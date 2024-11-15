@@ -11,7 +11,6 @@ C:\Users\Asus\source\repos\iReverse_BootInfo\iReverse_BootInfo\obj\Debug\iRevers
 C:\Users\Asus\source\repos\iReverse_BootInfo\Sources\bin\Debug\iReverse_BootInfo.exe.config
 C:\Users\Asus\source\repos\iReverse_BootInfo\Sources\bin\Debug\iReverse_BootInfo.exe
 C:\Users\Asus\source\repos\iReverse_BootInfo\Sources\bin\Debug\iReverse_BootInfo.pdb
-C:\Users\Asus\source\repos\iReverse_BootInfo\Sources\obj\Debug\iReverse_BootInfo.csproj.AssemblyReference.cache
 C:\Users\Asus\source\repos\iReverse_BootInfo\Sources\obj\Debug\iReverse_BootInfo.Main.resources
 C:\Users\Asus\source\repos\iReverse_BootInfo\Sources\obj\Debug\iReverse_BootInfo.Properties.Resources.resources
 C:\Users\Asus\source\repos\iReverse_BootInfo\Sources\obj\Debug\iReverse_BootInfo.csproj.GenerateResource.cache
