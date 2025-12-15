@@ -127,12 +127,13 @@ namespace iReverse_BootInfo.boot
                     {
                         byte[] dst = new byte[50000000];
                         var block = Lz4Decompressor.lz4_hadikit_decompress(src: ramdisk, dst: ref dst);
-
-                        if (block > 0)
-                        {
+                        
+                        // Fix info not readed ... #16-12-2025
+                        //if (block > 0)
+                        //{
                             var cpio = new cpio_stream(dst);
                             listsprop = cpio.parsecpio();
-                        }
+                        //}
                     }
                     else
                     {
@@ -269,3 +270,4 @@ namespace iReverse_BootInfo.boot
         }
     }
 }
+
