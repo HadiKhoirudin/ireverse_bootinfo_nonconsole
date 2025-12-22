@@ -59,9 +59,9 @@ namespace iReverse_BootInfo
             this.label1.Font = new System.Drawing.Font("Nirmala UI", 14.25F);
             this.label1.Location = new System.Drawing.Point(7, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(473, 25);
+            this.label1.Size = new System.Drawing.Size(497, 25);
             this.label1.TabIndex = 1;
-            this.label1.Text = "iReverse BootIMG Info - Non Console - C# Version  x86";
+            this.label1.Text = "iReverse Boot EROFS Info - Non Console - C# Version  x86";
             // 
             // label_close
             // 
@@ -114,9 +114,9 @@ namespace iReverse_BootInfo
             // textBox_boot
             // 
             this.textBox_boot.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox_boot.Location = new System.Drawing.Point(222, 13);
+            this.textBox_boot.Location = new System.Drawing.Point(234, 13);
             this.textBox_boot.Name = "textBox_boot";
-            this.textBox_boot.Size = new System.Drawing.Size(270, 20);
+            this.textBox_boot.Size = new System.Drawing.Size(258, 20);
             this.textBox_boot.TabIndex = 1;
             this.textBox_boot.Text = "boot.img";
             // 
@@ -125,9 +125,9 @@ namespace iReverse_BootInfo
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(11, 16);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(205, 13);
+            this.label2.Size = new System.Drawing.Size(217, 13);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Input Recovery / Boot IMG file : ";
+            this.label2.Text = "Input Recovery / Boot EROFS file : ";
             // 
             // richTextBox1
             // 

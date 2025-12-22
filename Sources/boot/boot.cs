@@ -1,4 +1,5 @@
-﻿using System;
+﻿using iReverse_BootInfo.EROFS.Core;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -65,7 +66,7 @@ namespace iReverse_BootInfo.boot
             { "Fingerprint ", new List<string> { "ro.build.description", "ro.bootimage.build.fingerprint" } }
         };
 
-        public static void extract(byte[] boot)
+        public static void extract_boot_recovery(byte[] boot)
         {
             string check_boot = Encoding.UTF8.GetString(boot.Take(15).ToArray());
 
@@ -127,12 +128,12 @@ namespace iReverse_BootInfo.boot
                     {
                         byte[] dst = new byte[50000000];
                         var block = Lz4Decompressor.lz4_hadikit_decompress(src: ramdisk, dst: ref dst);
-                        
+
                         // Fix info not readed ... #16-12-2025
                         //if (block > 0)
                         //{
-                            var cpio = new cpio_stream(dst);
-                            listsprop = cpio.parsecpio();
+                        var cpio = new cpio_stream(dst);
+                        listsprop = cpio.parsecpio();
                         //}
                     }
                     else
@@ -196,6 +197,40 @@ namespace iReverse_BootInfo.boot
             handle.Free();
             return theStructure;
         }
+
+        public static void extract_erofs(string fileName)
+        {
+
+            var listsprop = new List<string>();
+
+
+            using (var erofs = new ErofsImage(fileName))
+            {
+                erofs.Root.result = "";
+                erofs.Root.Extract();
+
+                listsprop.AddRange(erofs.Root.result.Split("\n"[0]));
+            }
+
+            if (listsprop.Count > 0)
+            {
+                foreach (var kvp in build)
+                {
+                    string mainCmd = kvp.Key;
+                    foreach (string command in kvp.Value)
+                    {
+                        var info = infolist(listsprop, command);
+                        if (!string.IsNullOrEmpty(info))
+                        {
+                            Main.RichLogs($"  {mainCmd}: ", Color.White, false, false);
+                            Main.RichLogs(info, Color.MediumSlateBlue, true, true);
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
 
         public static string infolist(List<string> allinfolist, string search)
         {

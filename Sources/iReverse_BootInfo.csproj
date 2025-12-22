@@ -90,6 +90,21 @@
     <Compile Include="boot\cpio.cs" />
     <Compile Include="boot\boot.cs" />
     <Compile Include="boot\lz4.cs" />
+    <Compile Include="EROFS\Compression\Lz4Raw.cs" />
+    <Compile Include="EROFS\Core\DirEnt.cs" />
+    <Compile Include="EROFS\Core\DirInode.cs" />
+    <Compile Include="EROFS\Core\ErofsImage.cs" />
+    <Compile Include="EROFS\Core\Inode.cs" />
+    <Compile Include="EROFS\Core\RegFileInode.cs" />
+    <Compile Include="EROFS\Core\SymlinkInode .cs" />
+    <Compile Include="EROFS\IO\MappedFile.cs" />
+    <Compile Include="EROFS\IO\StructReader.cs" />
+    <Compile Include="EROFS\Structs\ErofsDirent.cs" />
+    <Compile Include="EROFS\Structs\ErofsInodeV1.cs" />
+    <Compile Include="EROFS\Structs\ErofsSuper.cs" />
+    <Compile Include="EROFS\Structs\ZMapHeader.cs" />
+    <Compile Include="EROFS\Structs\ZVleClusterIndex.cs" />
+    <Compile Include="EROFS\Structs\ZVleDecompressedIndex.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
